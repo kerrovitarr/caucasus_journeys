@@ -120,14 +120,14 @@ export default function HomePage() {
           sizes="100vw"
           className="object-cover object-[58%_center] brightness-[1.03] saturate-[1.08]"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(28,23,20,0.74),rgba(28,23,20,0.42)_45%,rgba(28,23,20,0.12)),linear-gradient(180deg,rgba(28,23,20,0.08),rgba(28,23,20,0.62))]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(28,23,20,0.82),rgba(28,23,20,0.5)_45%,rgba(28,23,20,0.18)),linear-gradient(180deg,rgba(28,23,20,0.14),rgba(28,23,20,0.78))]" />
         <Container className="relative flex min-h-[82svh] flex-col justify-end pb-8 pt-28 sm:pb-10 lg:pt-32">
-          <div className="min-w-0 max-w-[22rem] pb-8 sm:max-w-3xl sm:pb-12">
+          <div className="text-on-photo min-w-0 max-w-[22rem] pb-8 sm:max-w-3xl sm:pb-12">
             <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-gold">Armenia & Georgia journeys</p>
-            <h1 className="text-wrap font-display text-[2.25rem] leading-[1.04] sm:text-6xl lg:text-7xl">
+            <h1 className="text-wrap font-display text-[2.25rem] leading-[1.04] text-paper sm:text-6xl lg:text-7xl">
               Culture, mountains and warm tables, beautifully planned.
             </h1>
-            <p className="mt-6 max-w-2xl text-base leading-7 text-paper/84 sm:text-xl sm:leading-8">
+            <p className="mt-6 max-w-2xl text-base leading-7 text-paper/90 sm:text-xl sm:leading-8">
               Custom group journeys and forming-group requests through Armenia and Georgia, shaped around sacred
               heritage, wine, festivals, ateliers, Lake Sevan and a gentle Silk Road thread.
             </p>
@@ -141,11 +141,11 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="grid min-w-0 gap-3 border-t border-paper/25 pt-5 sm:grid-cols-3">
+          <div className="text-on-photo grid min-w-0 gap-3 border-t border-paper/35 pt-5 sm:grid-cols-3">
             {heroFacts.map((fact) => (
               <div key={fact.value} className="min-w-0">
                 <p className="break-words font-display text-2xl leading-tight text-paper">{fact.value}</p>
-                <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-paper/64">{fact.label}</p>
+                <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-paper/78">{fact.label}</p>
               </div>
             ))}
           </div>
@@ -174,11 +174,11 @@ export default function HomePage() {
                     sizes="(min-width: 1024px) 30vw, (min-width: 640px) 50vw, 100vw"
                     className="object-cover transition duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink/82 via-ink/30 to-transparent" />
-                  <div className="absolute inset-x-0 bottom-0 p-5">
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/58 to-ink/12" />
+                  <div className="text-on-photo absolute inset-x-0 bottom-0 p-5">
                     <p className="text-xs font-bold uppercase tracking-[0.16em] text-gold">{reason.linkLabel}</p>
                     <h2 className="mt-2 font-display text-2xl leading-tight text-paper">{reason.title}</h2>
-                    <p className="mt-3 text-sm leading-6 text-paper/78">{reason.body}</p>
+                    <p className="mt-3 text-sm leading-6 text-paper/88">{reason.body}</p>
                   </div>
                 </Link>
               ))}
