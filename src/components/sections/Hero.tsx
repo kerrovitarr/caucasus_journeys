@@ -38,9 +38,9 @@ export function Hero({
       />
       <div className={cn("absolute inset-0", overlayClassName)} />
       <Container className="relative flex min-h-[78svh] items-center py-24 sm:py-28">
-        <div className="max-w-3xl">
+        <div className="w-full min-w-0 max-w-[22rem] sm:max-w-3xl">
           <p className="mb-5 text-xs font-bold uppercase tracking-[0.18em] text-gold">Armenia & Georgia Journeys</p>
-          <h1 className="font-display text-5xl leading-[1.02] sm:text-6xl lg:text-7xl">{title}</h1>
+          <h1 className="font-display text-4xl leading-[1.05] sm:text-6xl lg:text-7xl">{title}</h1>
           <p className="mt-7 max-w-2xl text-lg leading-8 text-paper/80 sm:text-xl">{subtitle}</p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <ButtonLink href={primaryCta.href} variant="light">

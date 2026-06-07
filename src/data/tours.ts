@@ -86,9 +86,10 @@ export const tourCategories: TourCategory[] = [
 
 export const featuredTour = {
   title: "12-Day Georgia & Armenia Cultural Journey",
+  durationLabel: "Flexible 10-14 days",
   slug: "georgia-armenia-12-days",
-  image: "/images/real/khor-virap-green-field.jpg",
-  imageAlt: "Green Ararat Plain with Khor Virap Monastery and Mount Ararat",
+  image: "/images/real/khor-virap-ararat-hero.jpg",
+  imageAlt: "Khor Virap Monastery beneath Mount Ararat",
   route:
     "Flight gateway -> Tbilisi -> Kakheti -> Mtskheta -> Haghpat -> Dilijan -> Lake Sevan -> Tatev -> Noravank -> Khor Virap -> Yerevan -> Echmiadzin -> Garni -> Geghard -> Return flight",
   routeStops: [
@@ -109,12 +110,12 @@ export const featuredTour = {
     "Return flight"
   ],
   overview:
-    "A carefully paced sample route from Georgia into Armenia, shaped around sacred heritage, city culture, wine traditions, mountain landscapes, Silk Road traces and warm hospitality. International flights are checked separately by date, but the journey itself begins on arrival in Tbilisi.",
+    "A carefully paced sample route from Georgia into Armenia, shaped around sacred heritage, city culture, wine traditions, mountain landscapes, Silk Road traces and warm hospitality. The published version is a 12-day skeleton, but many groups can shape it into a 10-14 day journey. International flights are checked separately by date, but the journey itself begins on arrival in Tbilisi.",
   advisoryNote:
-    "Birkin Travel Advisory is the first contact for route questions and planning wishes. Ruzanna's Armenian partner agency prepares the final programme, booking documents and payment instructions.",
+    "Birkin Travel Advisory is the first contact for route questions and planning wishes. Ruzanna's Armenian agency Arminius prepares the final programme, booking documents and payment instructions.",
   priceRange: "Approx. CHF 1,800-2,000 per person",
   priceDetail:
-    "This is a working average for the land programme when group economics work, excluding international flights, personal insurance and optional upgrades. It is not a binding offer; the final quote depends on group size, dates, hotel level, guide language, availability and selected experiences.",
+    "This is a working average for the 12-day land programme when group economics work, excluding international flights, personal insurance and optional upgrades. Shorter 10-day and extended 14-day versions are recalculated separately. It is not a binding offer; the final quote depends on group size, dates, hotel level, guide language, availability and selected experiences.",
   whoFor: [
     "Connected groups such as parishes, clubs, associations, choirs, senior groups, diaspora communities or closed communities travelling together",
     "Individual travellers, couples, families or friends who want to register interest and join a forming group if dates, language and route preferences match",
@@ -123,7 +124,7 @@ export const featuredTour = {
   offerFormats: [
     {
       title: "A whole connected group",
-      body: "A parish, club, association, company circle, choir, senior group or closed community can request the route as one group. The proposal is shaped around your dates, language, pace and interests."
+      body: "A parish, club, association, company circle, choir, senior group or closed community can request the route as one group. The proposal is shaped around your dates, language, pace, interests and preferred 10-14 day rhythm."
     },
     {
       title: "A place in a forming group",
@@ -131,7 +132,7 @@ export const featuredTour = {
     },
     {
       title: "Clear partner confirmation",
-      body: "Once wishes, dates and group logic are clear, travellers are introduced to the Armenian partner agency for the final programme, booking steps, payment instructions and travel documents."
+      body: "Once wishes, dates and group logic are clear, travellers are introduced to Arminius for the final programme, booking steps, payment instructions and travel documents."
     }
   ],
   routeChapters: [
@@ -210,6 +211,7 @@ export const featuredTour = {
     "UNESCO sites",
     "Wine tasting",
     "Georgian supra",
+    "10-14 day route adaptation where group logic allows",
     "Tatev cable car",
     "Geghard sacred music concert",
     "Lavash-making masterclass",
@@ -218,11 +220,11 @@ export const featuredTour = {
     "German, French, Armenian, English or Russian-speaking guides depending on traveller needs"
   ],
   pricingNote:
-    "As an orientation, the 12-day land programme is currently often around CHF 1,800-2,000 per person when group economics work. Final price depends on traveller count, travel dates, flight conditions, hotel level, guide language and selected experiences.",
+    "As an orientation, the 12-day land programme is currently often around CHF 1,800-2,000 per person when group economics work. A 10-14 day version is quoted after the route, traveller count, travel dates, flight conditions, hotel level, guide language and selected experiences are checked.",
   cooperationNote:
-    "Birkin Travel Advisory is the personal first contact and introduces travellers to Ruzanna's Armenian partner agency for final booking, payment steps and travel documents unless a different written arrangement is made.",
+    "Birkin Travel Advisory is the personal first contact and introduces travellers to Ruzanna's Armenian agency Arminius for final booking, payment steps and travel documents unless a different written arrangement is made.",
   customisation:
-    "The route is a skeleton, not a cage, but changes must work for the whole travelling group. Atelier visits, food workshops, music, sacred heritage, Silk Road context, markets, clothing, textiles, wine, family history and slower rest moments can be added where the route, season, budget and group logistics allow.",
+    "The route is a skeleton, not a cage, but changes must work for the whole travelling group. It can often be tightened toward 10 days or expanded toward 14 days. Atelier visits, food workshops, music, sacred heritage, Silk Road context, markets, clothing, textiles, wine, family history and slower rest moments can be added where the route, season, budget and group logistics allow.",
   itinerary: [
     {
       day: 1,

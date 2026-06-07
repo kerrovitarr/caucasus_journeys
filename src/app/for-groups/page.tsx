@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 const arrangements = [
-  "Programme design with the Armenian operating partner",
+  "Programme design with Arminius in Armenia",
   "German, French, Armenian, English or Russian-speaking guide options",
   "Presentations for parishes, clubs and associations",
   "Hotels, coaches, visits, meals and cultural experiences",
@@ -56,8 +56,8 @@ const groupThemes = [
   },
   {
     title: "Silk Road & Caravan Passes",
-    image: "/images/real/tatev-monastery.jpg",
-    imageAlt: "Tatev Monastery and mountain landscape in Armenia",
+    image: "/images/real/tatev-green-monastery.jpg",
+    imageAlt: "Tatev Monastery above a green mountain gorge in Armenia",
     body: "Selim Pass, Tatev roads, old trade-route memory, mountain crossings and a light historical thread across the Caucasus."
   },
   {

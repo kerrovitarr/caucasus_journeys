@@ -5,7 +5,7 @@ export const bookingSteps = [
   },
   {
     title: "Choose the route direction",
-    body: "Use the 12-day Georgia and Armenia route as a base, or focus more deeply on faith, wine, food, ateliers, cities, mountains or family history."
+    body: "Use the 12-day Georgia and Armenia route as a base, shape it toward 10-14 days, or focus more deeply on faith, wine, food, ateliers, cities, mountains or family history."
   },
   {
     title: "Check group logic",
@@ -13,7 +13,7 @@ export const bookingSteps = [
   },
   {
     title: "Confirm with the partner",
-    body: "Birkin Travel Advisory clarifies the first wishes and route direction. Ruzanna's Armenian partner agency confirms the final offer, booking documents and payment steps."
+    body: "Birkin Travel Advisory clarifies the first wishes and route direction. Ruzanna's Armenian agency Arminius confirms the final offer, booking documents and payment steps."
   }
 ];
 
@@ -32,7 +32,7 @@ export const travellerEssentials = [
   },
   {
     title: "Partner confirmation",
-    body: "The first conversation clarifies wishes and fit. The final booking, payments, travel documents and local coordination are confirmed by the Armenian partner agency."
+    body: "The first conversation clarifies wishes and fit. The final booking, payments, travel documents and local coordination are confirmed with Arminius in Armenia."
   }
 ];
 
@@ -50,16 +50,16 @@ export const faqItems = [
   {
     question: "Can we change the 12-day route?",
     answer:
-      "Yes. The published route is a strong skeleton, not a rigid product. Some days can be removed, added or reshaped depending on season and logistics."
+      "Yes. The published route is a strong skeleton, not a rigid product. Many group versions can be shaped within a 10-14 day window, depending on season, distance, interests and logistics."
   },
   {
     question: "Who operates the trip locally?",
     answer:
-      "The journey is confirmed and coordinated locally by the experienced Armenian partner agency connected to Ruzanna's family travel business, active since the 1990s. Birkin Travel Advisory is the first contact for route questions before partner confirmation."
+      "The journey is confirmed and coordinated locally by Ruzanna's experienced Armenian agency Arminius, active since the 1990s through her family travel business. Birkin Travel Advisory is the first contact for route questions before partner confirmation."
   },
   {
     question: "Is the price fixed on the website?",
     answer:
-      "No. As a current orientation, the 12-day land programme is often around CHF 1,800-2,000 per person when group economics work. The final quote depends on traveller count, dates, flight conditions, hotel level, guide language and selected experiences."
+      "No. As a current orientation, the 12-day land programme is often around CHF 1,800-2,000 per person when group economics work. A 10-day or 14-day version is quoted separately. The final quote depends on traveller count, dates, flight conditions, hotel level, guide language and selected experiences."
   }
 ];

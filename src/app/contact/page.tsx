@@ -32,7 +32,7 @@ export default function ContactPage() {
                 <p className="text-xs font-bold uppercase tracking-[0.18em] text-pomegranate">Partner Confirmation</p>
                 <p className="mt-4 text-sm leading-7 text-stone">
                   Birkin Travel Advisory helps clarify the first route questions. Final booking, payments and travel
-                  documents are handled by the Armenian partner agency.
+                  documents are prepared with Arminius in Armenia.
                 </p>
               </div>
               <div className="mt-5 rounded-lg border border-forest/10 bg-paper p-6 shadow-soft">

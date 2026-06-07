@@ -9,17 +9,17 @@ import { Container } from "@/components/ui/Container";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "About Birkin Travel Advisory, the Switzerland contact connecting travellers with Ruzanna's experienced Armenian family travel business for group journeys."
+    "About Birkin Travel Advisory, the Switzerland contact connecting travellers with Ruzanna's Armenian agency Arminius for group journeys."
 };
 
 const values = [
   {
     title: "Family travel heritage",
-    body: "Ruzanna's father founded the Armenian travel business in the 1990s. The agency welcomed many travellers from Germany, Austria and German-speaking Switzerland to Armenia and Georgia, and this work is now part of Ruzanna's family heritage."
+    body: "Ruzanna's father founded the Armenian travel agency Arminius in the 1990s. The agency welcomed many travellers from Germany, Austria and German-speaking Switzerland to Armenia and Georgia, and this work is now part of Ruzanna's family heritage."
   },
   {
     title: "First-contact care",
-    body: "Kyrylo and Tatyana are building Birkin Travel Advisory as the Switzerland contact point, so travellers can understand the journeys clearly before being connected with the Armenian partner agency."
+    body: "Kyrylo and Tatyana are building Birkin Travel Advisory as the Switzerland contact point, so travellers can understand the journeys clearly before being connected with Arminius."
   },
   {
     title: "Personal connection",
@@ -31,7 +31,7 @@ const people = [
   {
     name: "Ruzanna",
     role: "Armenian partner",
-    body: "Ruzanna carries forward the travel business founded by her father. Her family history gives the journeys their local roots, trusted relationships and long experience with German-speaking travellers."
+    body: "Ruzanna carries forward Arminius, the travel agency founded by her father. Her family history gives the journeys their local roots, trusted relationships and long experience with German-speaking travellers."
   },
   {
     name: "Tatyana",
@@ -49,7 +49,7 @@ const partnershipNotes = [
   "Formed communities can request a complete group proposal for their own members.",
   "Individuals, couples, families and friends can register interest and may join a forming group when enough compatible travellers are available.",
   "Routes are customised around interests where distance, season, budget and availability allow.",
-  "Local guides, drivers, hotels, meals and workshops are coordinated by the Armenian operating partner and their trusted network.",
+  "Local guides, drivers, hotels, meals and workshops are coordinated through Arminius and their trusted network.",
   "Clear communication should make the process easy to understand before travellers move into final booking with the partner."
 ];
 
@@ -59,7 +59,7 @@ export default function AboutPage() {
       <PageIntro
         eyebrow="About"
         title="A personal bridge between Switzerland, Armenia and Georgia"
-        body="Birkin Travel Advisory is a personal bridge to a trusted Armenian family travel business, helping formed groups and individual travellers understand the journeys before the Armenian partner confirms the final programme."
+        body="Birkin Travel Advisory is a personal bridge to Arminius, Ruzanna's trusted Armenian family agency, helping formed groups and individual travellers understand the journeys before the final programme is prepared."
       />
 
       <section className="py-20 sm:py-24">
@@ -67,7 +67,7 @@ export default function AboutPage() {
           <SectionTitle
             eyebrow="Our Story"
             title="Rooted in a family agency and a personal connection"
-            body="This is not a catalogue assembled far away from the place. The Armenian side began in the 1990s, when Ruzanna's father founded a travel business that welcomed German, Austrian and Swiss travellers to Armenia and Georgia. Today Ruzanna carries that heritage forward, and Kyrylo and Tatyana help travellers in Switzerland begin the conversation clearly."
+            body="This is not a catalogue assembled far away from the place. The Armenian side began in the 1990s, when Ruzanna's father founded Arminius, a travel agency that welcomed German, Austrian and Swiss travellers to Armenia and Georgia. Today Ruzanna carries that heritage forward, and Kyrylo and Tatyana help travellers in Switzerland begin the conversation clearly."
           />
           <div className="mt-12 grid gap-6 lg:grid-cols-3">
             {values.map((value) => (
@@ -90,7 +90,7 @@ export default function AboutPage() {
                 body="The company story is deliberately personal. Travel to Armenia and Georgia is strongest when it is planned through real relationships, not only through inventory."
               />
               <div className="mt-8 flex flex-wrap gap-3">
-                <Badge>Armenian family agency</Badge>
+                <Badge>Arminius agency</Badge>
                 <Badge>Swiss first contact</Badge>
                 <Badge>Group travel</Badge>
                 <Badge>German-speaking heritage</Badge>

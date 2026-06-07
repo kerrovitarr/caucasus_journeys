@@ -18,7 +18,12 @@ export function FeaturedTourCard() {
         />
       </div>
       <div className="p-6 sm:p-9 lg:p-10">
-        <p className="text-xs font-bold uppercase tracking-[0.18em] text-pomegranate">Featured Journey</p>
+        <div className="flex flex-wrap items-center gap-3">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-pomegranate">Featured Journey</p>
+          <span className="rounded-full bg-gold/25 px-3 py-1 text-xs font-bold uppercase tracking-[0.14em] text-forest">
+            {featuredTour.durationLabel}
+          </span>
+        </div>
         <h3 className="mt-4 font-display text-3xl leading-tight text-forest sm:text-4xl">{featuredTour.title}</h3>
         <p className="mt-5 text-base leading-8 text-stone">{featuredTour.overview}</p>
         <div className="mt-6 flex flex-wrap gap-2">

@@ -26,8 +26,8 @@ const sellingPoints = [
     body: "Monasteries, wine country, Silk Road traces, Lake Sevan, Yerevan evenings, ateliers and mountain roads give the journey more than one reason to be memorable."
   },
   {
-    title: "Built for people who travel together",
-    body: "The programme can be shaped for parishes, clubs, senior groups, cultural associations, families, couples or travellers joining a compatible forming group."
+    title: "Individual approach inside a clear route",
+    body: "The journey starts from proven group logic, then adapts around the people travelling: their pace, language, interests, comfort and reason for going."
   },
   {
     title: "Local knowledge checks every idea",
@@ -42,8 +42,8 @@ const sellingPoints = [
 const routeMoments = [
   {
     title: "Silk Road roads and highland memory",
-    image: "/images/real/tatev-monastery.jpg",
-    imageAlt: "Tatev Monastery and mountain landscape in Armenia"
+    image: "/images/real/tatev-green-monastery.jpg",
+    imageAlt: "Tatev Monastery above a green mountain gorge in Armenia"
   },
   {
     title: "Festivals, wine and public celebration",
@@ -60,7 +60,7 @@ const routeMoments = [
 const confidenceSignals = [
   {
     title: "Real partner roots",
-    body: "The Armenian travel side comes from Ruzanna's family agency, active since the 1990s and experienced with travellers from German-speaking Europe."
+    body: "The Armenian travel side comes from Ruzanna's family agency Arminius, active since the 1990s and experienced with travellers from German-speaking Europe."
   },
   {
     title: "Clear next step",
@@ -78,9 +78,9 @@ export default function HomePage() {
       <Hero
         title="Armenia & Georgia Journeys for Curious Groups"
         subtitle="A cultured, warm and group-ready way to experience ancient monasteries, Silk Road traces, mountain landscapes, wine traditions, festivals, ateliers, food and unforgettable hospitality."
-        image="/images/real/khor-virap-green-field.jpg"
-        imageAlt="Green Ararat Plain with Khor Virap Monastery and Mount Ararat"
-        imageClassName="object-[58%_center] brightness-[1.08] saturate-[1.12]"
+        image="/images/real/khor-virap-ararat-hero.jpg"
+        imageAlt="Khor Virap Monastery beneath Mount Ararat"
+        imageClassName="object-[55%_center] brightness-[1.04] saturate-[1.08]"
         overlayClassName="image-vignette-soft"
         primaryCta={{ label: "Explore Journeys", href: "/tours" }}
         secondaryCta={{ label: "Request an Offer", href: "/contact" }}
@@ -93,7 +93,7 @@ export default function HomePage() {
               <SectionTitle
                 eyebrow="Why People Say Yes"
                 title="It feels famous, intimate and beautifully varied"
-                body="Armenia and Georgia give travellers the pleasure of recognition - Ararat, the Silk Road, ancient Christianity, wine - and then surprise them with living culture, generous tables and landscapes that feel close."
+                body="Armenia and Georgia give travellers the pleasure of recognition - Ararat, the Silk Road, ancient Christianity, wine - and then surprise them with living culture, generous tables, individual route care and landscapes that feel close."
               />
               <div className="mt-9 grid gap-4 sm:grid-cols-2">
                 {sellingPoints.map((point) => (
@@ -149,7 +149,7 @@ export default function HomePage() {
           <SectionTitle
             eyebrow="Featured Tour"
             title="12-Day Georgia & Armenia Cultural Journey"
-            body="A signature Armenia and Georgia route linking old towns, sacred sites, wine country, mountain landscapes and living culture."
+            body="A signature Armenia and Georgia route linking old towns, sacred sites, wine country, mountain landscapes and living culture. The sample is shown as 12 days, but many group versions can be shaped within a 10-14 day window."
           />
           <div className="mt-12">
             <FeaturedTourCard />
@@ -163,14 +163,14 @@ export default function HomePage() {
             <SectionTitle
               eyebrow="Our Roots"
               title="Rooted in Armenian travel heritage and real relationships"
-              body="The journeys grow from a personal partnership: Ruzanna's Armenian family travel business, founded by her father in the 1990s, and the careful first-contact support built by Kyrylo and Tatyana."
+              body="The journeys grow from a personal partnership: Ruzanna's Armenian family agency Arminius, founded by her father in the 1990s, and the careful first-contact support built by Kyrylo and Tatyana."
             />
             <div className="grid gap-5 md:grid-cols-3">
               <article className="rounded-lg border border-forest/10 bg-paper p-6 shadow-soft">
                 <Badge>Armenia</Badge>
-                <h2 className="mt-5 font-display text-2xl leading-tight text-forest">Ruzanna's family agency</h2>
+                <h2 className="mt-5 font-display text-2xl leading-tight text-forest">Ruzanna's agency, Arminius</h2>
                 <p className="mt-4 text-sm leading-7 text-stone">
-                  A travel business with roots in the 1990s and long experience welcoming German-speaking travellers to
+                  A family travel business with roots in the 1990s and long experience welcoming German-speaking travellers to
                   Armenia and Georgia.
                 </p>
               </article>
@@ -183,11 +183,11 @@ export default function HomePage() {
                 </p>
               </article>
               <article className="rounded-lg border border-forest/10 bg-paper p-6 shadow-soft">
-                <Badge>Clear Roles</Badge>
-                <h2 className="mt-5 font-display text-2xl leading-tight text-forest">Partner confirmation</h2>
+                <Badge>Arminius</Badge>
+                <h2 className="mt-5 font-display text-2xl leading-tight text-forest">Final programme</h2>
                 <p className="mt-4 text-sm leading-7 text-stone">
-                  We gather wishes and explain the route. The Armenian operating partner confirms the final programme,
-                  payment steps and travel documents.
+                  We gather wishes and explain the route. Arminius prepares the final programme, payment steps and
+                  travel documents.
                 </p>
               </article>
             </div>

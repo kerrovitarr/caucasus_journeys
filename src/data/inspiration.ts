@@ -207,9 +207,9 @@ export const inspirationArticles: InspirationArticle[] = [
     title: "A quiet Silk Road thread through the Caucasus",
     slug: "silk-road-caucasus-caravan-routes",
     category: "Silk Road",
-    image: "/images/real/tatev-monastery.jpg",
-    imageAlt: "Tatev Monastery and mountain landscape in Armenia",
-    imagePosition: "object-[50%_45%]",
+    image: "/images/real/tatev-green-monastery.jpg",
+    imageAlt: "Tatev Monastery above a green mountain gorge in Armenia",
+    imagePosition: "object-[50%_48%]",
     excerpt:
       "Caravan roads, mountain passes, wine, monasteries and trade memory can add a famous historical layer without overwhelming the journey.",
     readTime: "5 min",

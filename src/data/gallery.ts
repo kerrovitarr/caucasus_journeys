@@ -23,6 +23,15 @@ export type GalleryItem = {
 
 export const galleryItems: GalleryItem[] = [
   {
+    title: "Khor Virap Beneath Ararat",
+    category: "Monasteries",
+    image: "/images/real/khor-virap-ararat-hero.jpg",
+    imageAlt: "Khor Virap Monastery beneath Mount Ararat",
+    aspect: "wide",
+    storyHref: "/inspiration/ancient-monasteries-mountain-landscapes",
+    storyLabel: "Sacred routes"
+  },
+  {
     title: "Khor Virap Green Plain",
     category: "Monasteries",
     image: "/images/real/khor-virap-green-field.jpg",
@@ -41,13 +50,14 @@ export const galleryItems: GalleryItem[] = [
     storyLabel: "Sacred routes"
   },
   {
-    title: "Tatev Above The Gorge",
+    title: "Green Tatev Above The Gorge",
     category: "Monasteries",
-    image: "/images/real/tatev-monastery.jpg",
-    imageAlt: "Tatev Monastery on a mountain ridge in southern Armenia",
+    image: "/images/real/tatev-green-monastery.jpg",
+    imageAlt: "Tatev Monastery above a green mountain gorge in Armenia",
+    imagePosition: "object-[50%_48%]",
     aspect: "wide",
-    storyHref: "/inspiration/mountain-roads-lakes-high-passes",
-    storyLabel: "Mountain roads"
+    storyHref: "/inspiration/silk-road-caucasus-caravan-routes",
+    storyLabel: "Silk Road thread"
   },
   {
     title: "Geghard Mountain Landscape",

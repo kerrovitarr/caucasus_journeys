@@ -11,7 +11,7 @@ export function Footer() {
             <p className="font-display text-3xl">Armenia & Georgia Journeys</p>
             <p className="mt-4 max-w-xl text-sm leading-7 text-paper/70">
               A personal first-contact point by Birkin Travel Advisory for group journeys to Armenia and Georgia,
-              confirmed and coordinated with the Armenian partner agency.
+              prepared with Ruzanna's Armenian agency Arminius.
             </p>
             <a className="mt-5 inline-flex text-sm font-semibold text-gold hover:text-paper" href={`mailto:${contactEmail}`}>
               {contactEmail}
@@ -38,7 +38,7 @@ export function Footer() {
             </div>
             <p className="mt-6 text-xs leading-6 text-paper/60">
               Working orientation: around CHF 1,800-2,000 per person for the sample land programme when group economics
-              work. Final price, booking, payments and travel documents are confirmed by the Armenian operating partner.
+              work. Final price, booking, payments and travel documents are confirmed through Arminius.
             </p>
           </div>
         </div>

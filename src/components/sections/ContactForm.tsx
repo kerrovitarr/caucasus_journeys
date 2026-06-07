@@ -267,8 +267,8 @@ export function ContactForm() {
               </a>
             </p>
             <p className="mt-2">
-              This inquiry does not create a booking. Final offer, payment and travel documents are handled by the
-              Armenian operating partner.
+              This inquiry does not create a booking. Final offer, payment and travel documents are prepared with
+              Arminius in Armenia.
             </p>
           </div>
         </div>

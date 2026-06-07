@@ -10,6 +10,15 @@ export type ImageCredit = {
 
 export const imageCredits: ImageCredit[] = [
   {
+    id: "tatev-green-monastery",
+    file: "/images/real/tatev-green-monastery.jpg",
+    title: "Tatev Monastery above the gorge",
+    photographer: "Evgeny Matveev",
+    platform: "Unsplash",
+    sourceUrl: "https://unsplash.com/photos/an-old-church-perched-on-top-of-a-cliff-WbvBQwguIes",
+    licenseUrl: "https://unsplash.com/license"
+  },
+  {
     id: "tatev-monastery",
     file: "/images/real/tatev-monastery.jpg",
     title: "Tatev Monastery and mountains",
@@ -90,6 +99,16 @@ export const imageCredits: ImageCredit[] = [
     platform: "Pexels",
     sourceUrl: "https://www.pexels.com/photo/large-wine-clay-pot-on-the-ground-outdoors-16112972/",
     licenseUrl: "https://www.pexels.com/license/"
+  },
+  {
+    id: "khor-virap-ararat-hero",
+    file: "/images/real/khor-virap-ararat-hero.jpg",
+    title: "Khor Virap and Mount Ararat",
+    photographer: "SnapSaga",
+    platform: "Unsplash",
+    sourceUrl:
+      "https://unsplash.com/photos/a-castle-on-a-hill-with-a-snow-covered-mountain-in-the-background-nPDimBfQo6g",
+    licenseUrl: "https://unsplash.com/license"
   },
   {
     id: "khor-virap-green-field",

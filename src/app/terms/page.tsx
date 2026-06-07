@@ -28,9 +28,9 @@ export default function TermsPage() {
             <article className="rounded-lg border border-forest/10 bg-paper p-6 shadow-soft sm:p-8">
               <h2 className="font-display text-3xl text-forest">Current partnership model</h2>
               <p className="mt-5 text-base leading-8 text-stone">
-                Birkin Travel Advisory is the first contact for route questions. The Armenian operating partner prepares
-                the final offer, receives payments, issues travel documents and carries local coordination responsibility
-                unless a different written arrangement is introduced.
+                Birkin Travel Advisory is the first contact for route questions. Arminius in Armenia prepares the final
+                offer, receives payments, issues travel documents and carries local coordination responsibility unless a
+                different written arrangement is introduced.
               </p>
             </article>
             <article className="rounded-lg border border-forest/10 bg-paper p-6 shadow-soft sm:p-8 lg:col-span-2">

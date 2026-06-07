@@ -118,9 +118,9 @@ export const customJourneyIdeas: CustomJourneyIdea[] = [
   {
     title: "Silk Road Passes and Caravan Memory",
     label: "Historic routes",
-    image: "/images/real/tatev-monastery.jpg",
-    imageAlt: "Tatev Monastery and mountain landscape in Armenia",
-    imagePosition: "object-[50%_45%]",
+    image: "/images/real/tatev-green-monastery.jpg",
+    imageAlt: "Tatev Monastery above a green mountain gorge in Armenia",
+    imagePosition: "object-[50%_48%]",
     description:
       "Add a light historical thread around caravan roads, Selim Pass, old trade routes, mountain crossings and cultures meeting across the Caucasus.",
     href: "/inspiration/silk-road-caucasus-caravan-routes",

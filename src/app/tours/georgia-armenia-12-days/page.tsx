@@ -17,7 +17,7 @@ import { cn } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "12-Day Georgia & Armenia Cultural Journey",
   description:
-    "A Georgia Armenia cultural journey through Tbilisi, Kakheti, Haghpat, Lake Sevan, Tatev, Yerevan, Echmiadzin, Garni and Geghard, with flight routing checked by date."
+    "A 10-14 day Georgia Armenia cultural journey through Tbilisi, Kakheti, Haghpat, Lake Sevan, Tatev, Yerevan, Echmiadzin, Garni and Geghard, with flight routing checked by date."
 };
 
 export default function FeaturedTourPage() {
@@ -26,7 +26,7 @@ export default function FeaturedTourPage() {
       <PageIntro
         eyebrow="Featured Journey"
         title={featuredTour.title}
-        body="A premium sample programme for group travel through Georgia and Armenia, shaped through a personal partnership and confirmed by the Armenian partner agency."
+        body="A premium sample programme for group travel through Georgia and Armenia. The route is shown as a 12-day skeleton and can often be shaped into a 10-14 day version with Arminius."
         primaryCta={{ label: "Register Interest", href: "/contact" }}
         secondaryCta={{ label: "See Day by Day", href: "#day-by-day" }}
       />

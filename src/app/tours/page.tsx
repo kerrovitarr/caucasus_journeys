@@ -26,8 +26,8 @@ export default function ToursPage() {
       <PageIntro
         eyebrow="Tours"
         title="Start with a proven route, then shape it around your people"
-        body="Begin with a clear Georgia and Armenia journey skeleton, then adapt the rhythm, language, spiritual focus, atelier visits, Silk Road context, food experiences and cultural depth with the Armenian operating partner."
-        primaryCta={{ label: "View 12-Day Route", href: "/tours/georgia-armenia-12-days" }}
+        body="Begin with a clear Georgia and Armenia journey skeleton, usually shaped into a 10-14 day group route, then adapt the rhythm, language, spiritual focus, atelier visits, Silk Road context, food experiences and cultural depth with Arminius."
+        primaryCta={{ label: "View 10-14 Day Route", href: "/tours/georgia-armenia-12-days" }}
         secondaryCta={{ label: "Request a Proposal", href: "/contact" }}
       />
 
@@ -63,7 +63,7 @@ export default function ToursPage() {
           <SectionTitle
             eyebrow="Sample Programme"
             title="A real route skeleton from Georgia into Armenia"
-            body="Based on the travel programme structure: Tbilisi, Kakheti, Mtskheta, Uplistsikhe, Haghpat, Lake Sevan, Tatev, Yerevan, Echmiadzin, Garni and Geghard. As an orientation, the land programme is currently often around CHF 1,800-2,000 per person when group economics work. International flights are planned separately from the most suitable gateway for the confirmed dates."
+            body="Based on the travel programme structure: Tbilisi, Kakheti, Mtskheta, Uplistsikhe, Haghpat, Lake Sevan, Tatev, Yerevan, Echmiadzin, Garni and Geghard. The published sample is 12 days, but many groups can plan it as 10-14 days. As an orientation, the land programme is currently often around CHF 1,800-2,000 per person when group economics work. International flights are planned separately from the most suitable gateway for the confirmed dates."
           />
           <div className="mt-12">
             <FeaturedTourCard />
@@ -182,7 +182,7 @@ export default function ToursPage() {
           <SectionTitle
             eyebrow="Questions"
             title="Good things to clarify before booking"
-            body="A group journey can be flexible, but it still needs transparent limits, enough compatible travellers and a clear local operating partner."
+            body="A group journey can be flexible, but it still needs transparent limits, enough compatible travellers and clear local confirmation through Arminius."
           />
           <div className="mt-10 divide-y divide-forest/10 rounded-lg border border-forest/10 bg-paper shadow-soft">
             {faqItems.map((item) => (
