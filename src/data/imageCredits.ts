@@ -272,5 +272,50 @@ export const imageCredits: ImageCredit[] = [
     platform: "Wikimedia Commons",
     sourceUrl: "https://commons.wikimedia.org/wiki/File:Areni_Wine_Festival_2.jpg",
     licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    id: "yerevan-wine-days-people",
+    file: "/images/real/yerevan-wine-days-people.jpg",
+    title: "Visitors at Yerevan Wine Days",
+    photographer: "Bogossi Production",
+    platform: "Wikimedia Commons",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Good_Mood_on_Yerevan_Wine_Days.jpg",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    id: "armenian-national-dance-aznavour",
+    file: "/images/real/armenian-national-dance-aznavour.jpg",
+    title: "Armenian national dance in Aznavour Square",
+    photographer: "Armineaghayan",
+    platform: "Wikimedia Commons",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Armenian_National_Dance_in_Aznavour_Square_(1).jpg",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    id: "gata-festival-khachik",
+    file: "/images/real/gata-festival-khachik.jpg",
+    title: "Gata Festival in Khachik",
+    photographer: "Armineaghayan",
+    platform: "Wikimedia Commons",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Gata_Festival_Khachik_(4).jpg",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    id: "georgian-supra-feast",
+    file: "/images/real/georgian-supra-feast.jpg",
+    title: "Georgian feast table",
+    photographer: "rugbyxm",
+    platform: "Wikimedia Commons",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Georgian_Feast.jpg",
+    licenseUrl: "https://creativecommons.org/licenses/by/2.0/"
+  },
+  {
+    id: "lavash-baking-yerevan-people",
+    file: "/images/real/lavash-baking-yerevan-people.jpg",
+    title: "Lavash baking in a Yerevan restaurant",
+    photographer: "Benoît Prieur",
+    platform: "Wikimedia Commons",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Lavash_baking_in_a_restaurant_(Yerevan)_June_2023.jpg",
+    licenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/"
   }
 ];

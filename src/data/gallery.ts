@@ -32,6 +32,36 @@ export const galleryItems: GalleryItem[] = [
     storyLabel: "Sacred routes"
   },
   {
+    title: "Yerevan Wine Days",
+    category: "Festivals",
+    image: "/images/real/yerevan-wine-days-people.jpg",
+    imageAlt: "Travelers raising glasses together at Yerevan Wine Days",
+    imagePosition: "object-[50%_56%]",
+    aspect: "wide",
+    storyHref: "/inspiration/armenian-festivals-big-celebrations",
+    storyLabel: "Festival routes"
+  },
+  {
+    title: "Armenian Dance In Yerevan",
+    category: "People & Traditions",
+    image: "/images/real/armenian-national-dance-aznavour.jpg",
+    imageAlt: "Armenian national dancers performing in Aznavour Square in Yerevan",
+    imagePosition: "object-[50%_64%]",
+    aspect: "wide",
+    storyHref: "/inspiration/yerevan-tbilisi-living-city-culture",
+    storyLabel: "Living traditions"
+  },
+  {
+    title: "Lavash Baking In Yerevan",
+    category: "People & Traditions",
+    image: "/images/real/lavash-baking-yerevan-people.jpg",
+    imageAlt: "Lavash being prepared around a tonir oven in a Yerevan bakery",
+    imagePosition: "object-[55%_58%]",
+    aspect: "wide",
+    storyHref: "/inspiration/food-workshops-markets-family-tables",
+    storyLabel: "Food traditions"
+  },
+  {
     title: "Khor Virap Green Plain",
     category: "Monasteries",
     image: "/images/real/khor-virap-green-field.jpg",
@@ -124,6 +154,16 @@ export const galleryItems: GalleryItem[] = [
     aspect: "wide",
     storyHref: "/inspiration/food-workshops-markets-family-tables",
     storyLabel: "Food traditions"
+  },
+  {
+    title: "Gata Festival In Khachik",
+    category: "Festivals",
+    image: "/images/real/gata-festival-khachik.jpg",
+    imageAlt: "Crowd gathered around a giant gata pastry at the Gata Festival in Khachik village",
+    imagePosition: "object-[52%_62%]",
+    aspect: "wide",
+    storyHref: "/inspiration/armenian-festivals-big-celebrations",
+    storyLabel: "Food festivals"
   },
   {
     title: "Armenian Coffee",
@@ -225,6 +265,16 @@ export const galleryItems: GalleryItem[] = [
     aspect: "tall",
     storyHref: "/inspiration/food-workshops-markets-family-tables",
     storyLabel: "Food traditions"
+  },
+  {
+    title: "Georgian Supra Table",
+    category: "Food & Wine",
+    image: "/images/real/georgian-supra-feast.jpg",
+    imageAlt: "Georgian supra table set with wine, lavash, herbs and shared dishes",
+    imagePosition: "object-[50%_58%]",
+    aspect: "wide",
+    storyHref: "/inspiration/kakheti-wine-hospitality",
+    storyLabel: "Table culture"
   },
   {
     title: "Khachapuri Table",
