@@ -40,7 +40,7 @@ export const faqItems = [
   {
     question: "Can I book as one person?",
     answer:
-      "You can register interest as one person. The practical goal is to join a forming group of compatible travellers; a fully individual departure is not the main model at this stage."
+      "Yes. One person can request a private trip, but the price per person is higher because guide, transport and planning costs are not shared. One person can also register interest in joining a forming group."
   },
   {
     question: "Can a family or couple request the trip?",

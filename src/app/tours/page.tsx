@@ -1,207 +1,250 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { FeaturedTourCard } from "@/components/cards/FeaturedTourCard";
-import { TourCategoryCard } from "@/components/cards/TourCategoryCard";
 import { CTASection } from "@/components/sections/CTASection";
-import { PageIntro } from "@/components/sections/PageIntro";
-import { SectionTitle } from "@/components/sections/SectionTitle";
-import { Badge } from "@/components/ui/Badge";
 import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { bookingSteps, faqItems, travellerEssentials } from "@/data/planning";
-import { tourCategories } from "@/data/tours";
-import { customJourneyIdeas, travelStyles } from "@/data/travelStyles";
-import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Tours",
   description:
-    "Explore Armenia Georgia group travel options for formed communities and individual travellers who want to join a forming group."
+    "Choose Armenia, Georgia or both, then shape trip length, private style, group format and route interests."
 };
+
+function contactHref(params: Record<string, string>) {
+  const search = new URLSearchParams(params);
+  return `/contact?${search.toString()}`;
+}
+
+const countryRoutes = [
+  {
+    title: "Armenia",
+    subtitle: "Sacred, warm, ancient",
+    body: "Ararat views, monasteries, Yerevan, Lake Sevan, Tatev, food, coffee, craft and festivals.",
+    image: "/images/real/khor-virap-ararat-hero.jpg",
+    imageAlt: "Khor Virap Monastery beneath Mount Ararat",
+    country: "Armenia"
+  },
+  {
+    title: "Georgia",
+    subtitle: "Wine, cities, table culture",
+    body: "Tbilisi, Kakheti, qvevri wine, Mtskheta, old towns, mountains and generous meals.",
+    image: "/images/real/tbilisi-aerial.jpg",
+    imageAlt: "Aerial view of Tbilisi old town architecture and river valley",
+    country: "Georgia"
+  },
+  {
+    title: "Armenia + Georgia",
+    subtitle: "The full Caucasus route",
+    body: "A richer cross-border journey with cities, wine, highlands, monasteries and a light Silk Road thread.",
+    image: "/images/real/tatev-green-monastery.jpg",
+    imageAlt: "Tatev Monastery above a green mountain gorge in Armenia",
+    country: "Armenia + Georgia"
+  }
+];
+
+const durationOptions = [
+  {
+    title: "Few days",
+    body: "A focused city, wine, sacred or family-style short trip.",
+    value: "Few days"
+  },
+  {
+    title: "About one week",
+    body: "A balanced route with enough time for culture and one or two deeper interests.",
+    value: "About one week"
+  },
+  {
+    title: "10-14 days",
+    body: "Best for Armenia + Georgia or a fuller private cultural journey.",
+    value: "10-14 days"
+  }
+];
+
+const travelStyles = [
+  {
+    title: "Private",
+    body: "For one person, couple, family, friends or a closed group. More flexible, usually more expensive.",
+    value: "Private trip"
+  },
+  {
+    title: "Forming group",
+    body: "Register interest and travel if compatible dates, language and route wishes come together.",
+    value: "Join a forming group"
+  },
+  {
+    title: "Own community",
+    body: "For a parish, club, association, company circle, school, choir or cultural group.",
+    value: "Own formed group"
+  }
+];
+
+const activityOptions = [
+  "Sacred sites",
+  "Food & wine",
+  "Festivals",
+  "Cognac & coffee",
+  "Lake Sevan",
+  "Silk Road",
+  "Ateliers",
+  "Mountains",
+  "Family history"
+];
 
 export default function ToursPage() {
   return (
     <>
-      <PageIntro
-        eyebrow="Tours"
-        title="Start with a proven route, then shape it around your people"
-        body="Begin with a clear Georgia and Armenia journey skeleton, usually shaped into a 10-14 day group route, then adapt the rhythm, language, spiritual focus, atelier visits, Silk Road context, food experiences and cultural depth with Arminius."
-        primaryCta={{ label: "View 10-14 Day Route", href: "/tours/georgia-armenia-12-days" }}
-        secondaryCta={{ label: "Request a Proposal", href: "/contact" }}
-      />
-
-      <section className="py-20 sm:py-24">
+      <section className="bg-forest py-16 text-paper sm:py-20">
         <Container>
-          <SectionTitle
-            eyebrow="Travel Formats"
-            title="A whole group, or a place in one being formed"
-            body="You do not need to personally gather 15-20 people before asking. A connected community can request its own proposal, while one traveller, a couple, a family or friends can register interest and potentially join a shared group departure."
-          />
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {travelStyles.map((style) => (
-              <article key={style.title} className="rounded-lg border border-forest/10 bg-paper p-6 shadow-soft">
-                <p className="text-xs font-bold uppercase tracking-[0.16em] text-pomegranate">{style.audience}</p>
-                <h2 className="mt-4 font-display text-2xl leading-tight text-forest">{style.title}</h2>
-                <p className="mt-4 text-sm leading-7 text-stone">{style.description}</p>
-                <ul className="mt-5 grid gap-2 text-sm leading-6 text-stone">
-                  {style.details.map((detail) => (
-                    <li key={detail} className="flex gap-2">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
-                      <span>{detail}</span>
-                    </li>
-                  ))}
-                </ul>
-              </article>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      <section className="bg-forest/5 py-20 sm:py-24">
-        <Container>
-          <SectionTitle
-            eyebrow="Sample Programme"
-            title="A real route skeleton from Georgia into Armenia"
-            body="Based on the travel programme structure: Tbilisi, Kakheti, Mtskheta, Uplistsikhe, Haghpat, Lake Sevan, Tatev, Yerevan, Echmiadzin, Garni and Geghard. The published sample is 12 days, but many groups can plan it as 10-14 days. As an orientation, the land programme is currently often around CHF 1,800-2,000 per person when group economics work. International flights are planned separately from the most suitable gateway for the confirmed dates."
-          />
-          <div className="mt-12">
-            <FeaturedTourCard />
-          </div>
-        </Container>
-      </section>
-
-      <section className="py-20 sm:py-24">
-        <Container>
-          <SectionTitle
-            eyebrow="Tour Categories"
-            title="Sacred heritage, festivals, food, wine and highland routes"
-            body="Begin with a travel direction, then refine the route, pace, language and cultural focus around the group that will actually travel."
-          />
-          <div className="mt-12 grid gap-6 lg:grid-cols-3">
-            {tourCategories.map((category) => (
-              <TourCategoryCard key={category.slug} category={category} />
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      <section className="bg-paper py-20 sm:py-24">
-        <Container>
-          <SectionTitle
-            eyebrow="Customisation"
-            title="What can be personalised?"
-            body="Client wishes lead the design, but customisation must work for the whole group. Choose a direction below, read the story, then tell us which details should shape a formed-group proposal or a future shared departure."
-          />
-          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {customJourneyIdeas.map((idea) => (
-              <Link
-                key={idea.title}
-                href={idea.href}
-                className="group overflow-hidden rounded-lg border border-forest/10 bg-ivory shadow-soft transition hover:-translate-y-1 hover:shadow-lift"
-              >
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <Image
-                    src={idea.image}
-                    alt={idea.imageAlt}
-                    fill
-                    sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
-                    className={cn("object-cover transition duration-700 group-hover:scale-105", idea.imagePosition)}
-                  />
-                </div>
-                <div className="p-6">
-                  <Badge>{idea.label}</Badge>
-                  <h2 className="mt-5 font-display text-2xl leading-tight text-forest">{idea.title}</h2>
-                  <p className="mt-4 text-sm leading-7 text-stone">{idea.description}</p>
-                  <ul className="mt-5 grid gap-2 text-sm leading-6 text-stone">
-                    {idea.examples.map((example) => (
-                      <li key={example} className="flex gap-2">
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
-                        <span>{example}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <span className="mt-5 inline-flex text-sm font-semibold text-wine group-hover:text-pomegranate">
-                    Read this idea
-                  </span>
-                </div>
-              </Link>
-            ))}
-          </div>
-          <div className="mt-10">
-            <ButtonLink href="/contact" variant="primary">
-              Tell Us Your Interests
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-gold">Tours</p>
+          <h1 className="mt-4 max-w-4xl font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">
+            Choose a direction. We shape the real route after.
+          </h1>
+          <p className="mt-6 max-w-3xl text-base leading-8 text-paper/82 sm:text-lg">
+            Pick Armenia, Georgia or both. Then choose length, travel style and interests. A private trip is possible
+            even for one person; it simply changes the price.
+          </p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <ButtonLink href="/contact" variant="light">
+              Request Proposal
+            </ButtonLink>
+            <ButtonLink href="#choose" variant="ghost">
+              Compare Options
             </ButtonLink>
           </div>
         </Container>
       </section>
 
-      <section className="py-20 sm:py-24">
+      <section id="choose" className="bg-paper py-14 sm:py-16">
         <Container>
-          <SectionTitle
-            eyebrow="Booking Flow"
-            title="How a request becomes a group journey"
-            body="The first message does not need to be perfect. A realistic proposal grows through a few clear steps, with local knowledge checking every idea against group size, route, season and availability."
-          />
-          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-            {bookingSteps.map((step, index) => (
-              <article key={step.title} className="rounded-lg border border-forest/10 bg-paper p-6 shadow-soft">
-                <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-gold/25 text-sm font-bold text-forest">
-                  {index + 1}
-                </span>
-                <h2 className="mt-5 font-display text-2xl leading-tight text-forest">{step.title}</h2>
-                <p className="mt-4 text-sm leading-7 text-stone">{step.body}</p>
-              </article>
+          <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-pomegranate">1. Country</p>
+              <h2 className="mt-3 font-display text-3xl leading-tight text-forest sm:text-4xl">Where do you want to go?</h2>
+            </div>
+          </div>
+          <div className="mt-8 grid gap-5 lg:grid-cols-3">
+            {countryRoutes.map((route) => (
+              <Link
+                key={route.title}
+                href={contactHref({ country: route.country })}
+                className="group overflow-hidden rounded-lg border border-forest/10 bg-ivory shadow-soft transition hover:-translate-y-1 hover:shadow-lift"
+              >
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <Image
+                    src={route.image}
+                    alt={route.imageAlt}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, 100vw"
+                    className="object-cover transition duration-700 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-5">
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-pomegranate">{route.subtitle}</p>
+                  <h3 className="mt-3 font-display text-2xl leading-tight text-forest">{route.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-stone">{route.body}</p>
+                  <p className="mt-5 text-sm font-semibold text-wine">Select {route.title}</p>
+                </div>
+              </Link>
             ))}
           </div>
         </Container>
       </section>
 
-      <section className="bg-forest/5 py-20 sm:py-24">
+      <section className="py-14 sm:py-16">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
-            <SectionTitle
-              eyebrow="Before You Ask"
-              title="The useful details to know early"
-              body="These are the practical pieces that help us prepare a thoughtful first answer: whether there is already a group, language, size, comfort, route focus and how much customisation is realistic."
-            />
-            <div className="grid gap-5 md:grid-cols-2">
-              {travellerEssentials.map((item) => (
-                <article key={item.title} className="rounded-lg border border-forest/10 bg-paper p-6 shadow-soft">
-                  <h2 className="font-display text-2xl text-forest">{item.title}</h2>
-                  <p className="mt-4 text-sm leading-7 text-stone">{item.body}</p>
-                </article>
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-pomegranate">2. Length</p>
+          <h2 className="mt-3 font-display text-3xl leading-tight text-forest sm:text-4xl">How much time do you have?</h2>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {durationOptions.map((option) => (
+              <Link
+                key={option.title}
+                href={contactHref({ duration: option.value })}
+                className="rounded-lg border border-forest/10 bg-paper p-5 shadow-soft transition hover:-translate-y-1 hover:shadow-lift"
+              >
+                <h3 className="font-display text-2xl leading-tight text-forest">{option.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-stone">{option.body}</p>
+                <p className="mt-5 text-sm font-semibold text-wine">Use this length</p>
+              </Link>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-forest/5 py-14 sm:py-16">
+        <Container>
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-pomegranate">3. Style</p>
+          <h2 className="mt-3 font-display text-3xl leading-tight text-forest sm:text-4xl">Private or shared?</h2>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {travelStyles.map((style) => (
+              <Link
+                key={style.title}
+                href={contactHref({ style: style.value })}
+                className="rounded-lg border border-forest/10 bg-paper p-5 shadow-soft transition hover:-translate-y-1 hover:shadow-lift"
+              >
+                <h3 className="font-display text-2xl leading-tight text-forest">{style.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-stone">{style.body}</p>
+                <p className="mt-5 text-sm font-semibold text-wine">Select style</p>
+              </Link>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-paper py-14 sm:py-16">
+        <Container>
+          <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-center">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-pomegranate">4. Interests</p>
+              <h2 className="mt-3 font-display text-3xl leading-tight text-forest sm:text-4xl">Add route ingredients</h2>
+              <p className="mt-5 text-base leading-8 text-stone">
+                Click any interest to start a request with it included. You can add more in the form.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              {activityOptions.map((activity) => (
+                <Link
+                  key={activity}
+                  href={contactHref({ interest: activity })}
+                  className="rounded-full border border-wine/20 bg-ivory px-4 py-3 text-sm font-semibold text-wine shadow-sm transition hover:border-wine hover:bg-paper"
+                >
+                  {activity}
+                </Link>
               ))}
             </div>
           </div>
         </Container>
       </section>
 
-      <section className="py-20 sm:py-24">
+      <section className="py-14 sm:py-16">
         <Container>
-          <SectionTitle
-            eyebrow="Questions"
-            title="Good things to clarify before booking"
-            body="A group journey can be flexible, but it still needs transparent limits, enough compatible travellers and clear local confirmation through Arminius."
-          />
-          <div className="mt-10 divide-y divide-forest/10 rounded-lg border border-forest/10 bg-paper shadow-soft">
-            {faqItems.map((item) => (
-              <details key={item.question} className="group p-6">
-                <summary className="cursor-pointer list-none font-display text-2xl leading-tight text-forest">
-                  {item.question}
-                </summary>
-                <p className="mt-4 text-sm leading-7 text-stone">{item.answer}</p>
-              </details>
-            ))}
-          </div>
+          <details className="rounded-lg border border-forest/10 bg-paper p-6 shadow-soft">
+            <summary className="cursor-pointer list-none font-display text-2xl leading-tight text-forest">
+              Need more practical detail?
+            </summary>
+            <div className="mt-5 grid gap-5 text-sm leading-7 text-stone md:grid-cols-3">
+              <p>
+                <span className="font-semibold text-forest">Price:</span> private trips and very small parties cost
+                more per person because the guide, transport and planning are not shared widely.
+              </p>
+              <p>
+                <span className="font-semibold text-forest">Flexibility:</span> country, length, guide language,
+                comfort level and interests are checked before any final proposal.
+              </p>
+              <p>
+                <span className="font-semibold text-forest">Partner:</span> Ruzanna's Armenian agency Arminius confirms
+                the final programme, booking documents and payment steps.
+              </p>
+            </div>
+          </details>
         </Container>
       </section>
 
       <CTASection
-        eyebrow="Custom Planning"
-        title="Have a group, or want to join one?"
-        body="Tell us whether you already represent a community or want to register interest as an individual traveller, couple, family or small circle. The first answer can start broad and become more precise together."
-        primaryLabel="Request a Proposal"
+        eyebrow="Ready"
+        title="Send the short version of what you want."
+        body="Country, length, style and a few interests are enough for a first answer. You can return later for deeper details."
+        primaryLabel="Start Request"
         primaryHref="/contact"
       />
     </>

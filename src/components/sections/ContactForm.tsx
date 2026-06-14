@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { contactEmail } from "@/data/navigation";
 import { Button } from "@/components/ui/Button";
 
@@ -10,11 +10,14 @@ type FormState = {
   phone: string;
   organisation: string;
   location: string;
+  countries: string;
+  duration: string;
   travelType: string;
   travellerCount: string;
-  interest: string;
+  interests: string[];
   language: string;
   season: string;
+  budget: string;
   message: string;
 };
 
@@ -24,22 +27,37 @@ const initialState: FormState = {
   phone: "",
   organisation: "",
   location: "",
+  countries: "",
+  duration: "",
   travelType: "",
   travellerCount: "",
-  interest: "",
+  interests: [],
   language: "",
   season: "",
+  budget: "",
   message: ""
 };
 
-const requiredFields: Array<keyof FormState> = [
+const requiredTextFields: Array<keyof Pick<FormState, "fullName" | "email" | "countries" | "duration" | "travelType" | "travellerCount" | "language">> = [
   "fullName",
   "email",
+  "countries",
+  "duration",
   "travelType",
   "travellerCount",
-  "interest",
-  "language",
-  "message"
+  "language"
+];
+
+const interestOptions = [
+  "Sacred sites",
+  "Food & wine",
+  "Festivals",
+  "Cognac & coffee",
+  "Lake Sevan",
+  "Silk Road",
+  "Ateliers",
+  "Mountains",
+  "Family history"
 ];
 
 export function ContactForm() {
@@ -48,16 +66,51 @@ export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [mailtoHref, setMailtoHref] = useState("");
 
-  function updateField(field: keyof FormState, value: string) {
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const country = params.get("country");
+    const duration = params.get("duration");
+    const style = params.get("style");
+    const interest = params.get("interest");
+    const language = params.get("language");
+
+    if (!country && !duration && !style && !interest && !language) {
+      return;
+    }
+
+    setForm((current) => ({
+      ...current,
+      countries: country || current.countries,
+      duration: duration || current.duration,
+      travelType: style || current.travelType,
+      language: language || current.language,
+      interests: interest && !current.interests.includes(interest) ? [...current.interests, interest] : current.interests
+    }));
+  }, []);
+
+  function updateField(field: keyof Omit<FormState, "interests">, value: string) {
     setForm((current) => ({ ...current, [field]: value }));
     setErrors((current) => ({ ...current, [field]: undefined }));
+  }
+
+  function toggleInterest(interest: string) {
+    setForm((current) => {
+      const hasInterest = current.interests.includes(interest);
+      return {
+        ...current,
+        interests: hasInterest
+          ? current.interests.filter((item) => item !== interest)
+          : [...current.interests, interest]
+      };
+    });
+    setErrors((current) => ({ ...current, interests: undefined }));
   }
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const nextErrors: Partial<Record<keyof FormState, string>> = {};
 
-    requiredFields.forEach((field) => {
+    requiredTextFields.forEach((field) => {
       if (!form[field].trim()) {
         nextErrors[field] = "This field is required.";
       }
@@ -81,14 +134,19 @@ export function ContactForm() {
       `Phone: ${form.phone || "Not provided"}`,
       `Organisation / community: ${form.organisation || "Not provided"}`,
       `Country / city: ${form.location || "Not provided"}`,
-      `Request format: ${form.travelType}`,
-      `Traveller count: ${form.travellerCount}`,
-      `Interest: ${form.interest}`,
-      `Preferred language: ${form.language}`,
-      `Preferred season: ${form.season || "Not provided"}`,
       "",
-      "Message:",
-      form.message
+      "Trip choices:",
+      `Country route: ${form.countries}`,
+      `Preferred length: ${form.duration}`,
+      `Travel style: ${form.travelType}`,
+      `Traveller count / party size: ${form.travellerCount}`,
+      `Guide language: ${form.language}`,
+      `Preferred season: ${form.season || "Not provided"}`,
+      `Budget orientation: ${form.budget || "Not provided"}`,
+      `Interests: ${form.interests.length ? form.interests.join(", ") : "Not selected"}`,
+      "",
+      "Extra notes:",
+      form.message || "No extra notes yet."
     ].join("\n");
     const href = `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
@@ -107,7 +165,7 @@ export function ContactForm() {
         <div className="mb-6 rounded-lg border border-gold/40 bg-gold/10 p-5 text-forest" role="status">
           <p className="font-display text-2xl">Your request is ready to send.</p>
           <p className="mt-3 text-sm leading-7 text-stone">
-            Your email app should open with the details filled in. If it does not, use the link below or write directly
+            Your email app should open with the choices filled in. If it does not, use the link below or write directly
             to{" "}
             <a className="font-semibold text-wine hover:text-pomegranate" href={`mailto:${contactEmail}`}>
               {contactEmail}
@@ -122,7 +180,6 @@ export function ContactForm() {
         </div>
       ) : null}
 
-      {/* Future integration point: replace mailto handoff with Formspree, Resend, Supabase or another service. */}
       <form className="grid gap-5" onSubmit={handleSubmit} noValidate>
         <div className="grid gap-5 sm:grid-cols-2">
           <label className={labelClass}>
@@ -152,6 +209,151 @@ export function ContactForm() {
 
         <div className="grid gap-5 sm:grid-cols-2">
           <label className={labelClass}>
+            Country route
+            <select
+              className={inputClass}
+              value={form.countries}
+              onChange={(event) => updateField("countries", event.target.value)}
+              required
+            >
+              <option value="">Select route</option>
+              <option>Armenia</option>
+              <option>Georgia</option>
+              <option>Armenia + Georgia</option>
+              <option>Not sure yet</option>
+            </select>
+            {errors.countries ? <span className="mt-2 block text-sm text-pomegranate">{errors.countries}</span> : null}
+          </label>
+          <label className={labelClass}>
+            Preferred length
+            <select
+              className={inputClass}
+              value={form.duration}
+              onChange={(event) => updateField("duration", event.target.value)}
+              required
+            >
+              <option value="">Select length</option>
+              <option>Few days</option>
+              <option>About one week</option>
+              <option>10-14 days</option>
+              <option>Not sure yet</option>
+            </select>
+            {errors.duration ? <span className="mt-2 block text-sm text-pomegranate">{errors.duration}</span> : null}
+          </label>
+        </div>
+
+        <div className="grid gap-5 sm:grid-cols-2">
+          <label className={labelClass}>
+            Travel style
+            <select
+              className={inputClass}
+              value={form.travelType}
+              onChange={(event) => updateField("travelType", event.target.value)}
+              required
+            >
+              <option value="">Select style</option>
+              <option>Private trip</option>
+              <option>Private trip for one person</option>
+              <option>Private couple / family trip</option>
+              <option>Own formed group</option>
+              <option>Join a forming group</option>
+              <option>Not sure yet</option>
+            </select>
+            {errors.travelType ? <span className="mt-2 block text-sm text-pomegranate">{errors.travelType}</span> : null}
+          </label>
+          <label className={labelClass}>
+            Traveller count / party size
+            <input
+              className={inputClass}
+              value={form.travellerCount}
+              onChange={(event) => updateField("travellerCount", event.target.value)}
+              placeholder="1, couple, family of 4, group of 18..."
+              required
+            />
+            {errors.travellerCount ? <span className="mt-2 block text-sm text-pomegranate">{errors.travellerCount}</span> : null}
+          </label>
+        </div>
+
+        <div className="grid gap-5 sm:grid-cols-2">
+          <label className={labelClass}>
+            Preferred language
+            <select
+              className={inputClass}
+              value={form.language}
+              onChange={(event) => updateField("language", event.target.value)}
+              required
+            >
+              <option value="">Select language</option>
+              <option>German</option>
+              <option>French</option>
+              <option>Armenian</option>
+              <option>English</option>
+              <option>Russian</option>
+              <option>Not sure yet</option>
+            </select>
+            {errors.language ? <span className="mt-2 block text-sm text-pomegranate">{errors.language}</span> : null}
+          </label>
+          <label className={labelClass}>
+            Preferred season optional
+            <input
+              className={inputClass}
+              value={form.season}
+              onChange={(event) => updateField("season", event.target.value)}
+              placeholder="spring, September, flexible..."
+            />
+          </label>
+        </div>
+
+        <fieldset>
+          <legend className={labelClass}>Interests optional</legend>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {interestOptions.map((interest) => {
+              const checked = form.interests.includes(interest);
+              return (
+                <label key={interest} className="cursor-pointer">
+                  <input
+                    type="checkbox"
+                    className="sr-only"
+                    checked={checked}
+                    onChange={() => toggleInterest(interest)}
+                  />
+                  <span
+                    className={`inline-flex rounded-full border px-4 py-2 text-sm font-semibold transition ${
+                      checked
+                        ? "border-wine bg-wine text-paper"
+                        : "border-wine/20 bg-ivory text-wine hover:border-wine"
+                    }`}
+                  >
+                    {interest}
+                  </span>
+                </label>
+              );
+            })}
+          </div>
+        </fieldset>
+
+        <div className="grid gap-5 sm:grid-cols-2">
+          <label className={labelClass}>
+            Budget orientation optional
+            <input
+              className={inputClass}
+              value={form.budget}
+              onChange={(event) => updateField("budget", event.target.value)}
+              placeholder="comfortable, private premium, price-sensitive..."
+            />
+          </label>
+          <label className={labelClass}>
+            Country / city optional
+            <input
+              className={inputClass}
+              value={form.location}
+              onChange={(event) => updateField("location", event.target.value)}
+            />
+          </label>
+        </div>
+
+        <div className="grid gap-5 sm:grid-cols-2">
+          <label className={labelClass}>
             Phone optional
             <input
               className={inputClass}
@@ -161,7 +363,7 @@ export function ContactForm() {
             />
           </label>
           <label className={labelClass}>
-            Organisation / community name optional
+            Organisation optional
             <input
               className={inputClass}
               value={form.organisation}
@@ -170,106 +372,26 @@ export function ContactForm() {
           </label>
         </div>
 
-        <div className="grid gap-5 sm:grid-cols-2">
-          <label className={labelClass}>
-            Country / city
-            <input className={inputClass} value={form.location} onChange={(event) => updateField("location", event.target.value)} />
-          </label>
-          <label className={labelClass}>
-            Request format
-            <select
-              className={inputClass}
-              value={form.travelType}
-              onChange={(event) => updateField("travelType", event.target.value)}
-              required
-            >
-              <option value="">Select format</option>
-              <option>I have a formed group / community</option>
-              <option>I am one traveller interested in joining a group</option>
-              <option>We are a couple interested in joining a group</option>
-              <option>We are a family interested in joining a group</option>
-              <option>We are friends / relatives interested in joining a group</option>
-              <option>Parish / church community</option>
-              <option>Club / association / cultural group</option>
-              <option>Not sure yet</option>
-            </select>
-            {errors.travelType ? <span className="mt-2 block text-sm text-pomegranate">{errors.travelType}</span> : null}
-          </label>
-        </div>
-
-        <div className="grid gap-5 sm:grid-cols-2">
-          <label className={labelClass}>
-            Approximate traveller count or party size
-            <input
-              className={inputClass}
-              value={form.travellerCount}
-              onChange={(event) => updateField("travellerCount", event.target.value)}
-              placeholder="1, 2, family of 4, community of 20..."
-              required
-            />
-            {errors.travellerCount ? <span className="mt-2 block text-sm text-pomegranate">{errors.travellerCount}</span> : null}
-          </label>
-          <label className={labelClass}>
-            Preferred season
-            <input className={inputClass} value={form.season} onChange={(event) => updateField("season", event.target.value)} />
-          </label>
-        </div>
-
-        <div className="grid gap-5 sm:grid-cols-2">
-          <label className={labelClass}>
-            Type of journey interest
-            <select className={inputClass} value={form.interest} onChange={(event) => updateField("interest", event.target.value)} required>
-              <option value="">Select interest</option>
-              <option>Sacred & Pilgrimage</option>
-              <option>Culture / Wine / History</option>
-              <option>Festivals / Celebrations</option>
-              <option>Cognac / Coffee / City culture</option>
-              <option>Lake Sevan / Nature</option>
-              <option>Ateliers / Craft / Clothing</option>
-              <option>Food / Wine / Hospitality</option>
-              <option>Signature Journey</option>
-              <option>Custom / not sure yet</option>
-            </select>
-            {errors.interest ? <span className="mt-2 block text-sm text-pomegranate">{errors.interest}</span> : null}
-          </label>
-          <label className={labelClass}>
-            Preferred language
-            <select className={inputClass} value={form.language} onChange={(event) => updateField("language", event.target.value)} required>
-              <option value="">Select language</option>
-              <option>German</option>
-              <option>French</option>
-              <option>Armenian</option>
-              <option>English</option>
-              <option>Russian</option>
-            </select>
-            {errors.language ? <span className="mt-2 block text-sm text-pomegranate">{errors.language}</span> : null}
-          </label>
-        </div>
-
         <label className={labelClass}>
-          Message, wishes and must-haves
+          Extra notes optional
           <textarea
-            className={`${inputClass} min-h-36 resize-y`}
+            className={`${inputClass} min-h-28 resize-y`}
             value={form.message}
             onChange={(event) => updateField("message", event.target.value)}
-            required
+            placeholder="Anything important: mobility, family roots, must-see places, hotel level..."
           />
-          {errors.message ? <span className="mt-2 block text-sm text-pomegranate">{errors.message}</span> : null}
         </label>
 
         <div className="flex flex-col gap-4 border-t border-forest/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
           <Button type="submit">Send Request</Button>
           <div className="text-sm leading-6 text-stone sm:max-w-md">
             <p>
-              Or contact us directly:{" "}
+              Or email directly:{" "}
               <a className="font-semibold text-wine hover:text-pomegranate" href={`mailto:${contactEmail}`}>
                 {contactEmail}
               </a>
             </p>
-            <p className="mt-2">
-              This inquiry does not create a booking. Final offer, payment and travel documents are prepared with
-              Arminius in Armenia.
-            </p>
+            <p className="mt-2">Final route, price and booking steps are confirmed with Arminius in Armenia.</p>
           </div>
         </div>
       </form>
