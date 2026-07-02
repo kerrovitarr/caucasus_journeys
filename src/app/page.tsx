@@ -69,14 +69,14 @@ export default function HomePage() {
     <>
       <section className="relative min-h-[76svh] overflow-hidden bg-ink text-paper">
         <Image
-          src="/images/real/yerevan-wine-days-people.jpg"
-          alt="Travelers raising glasses together at Yerevan Wine Days"
+          src="/images/real/geghard-landscape.jpg"
+          alt="Green Armenian mountain landscape near Geghard with Mount Ararat in the distance"
           fill
           priority
           loading="eager"
           fetchPriority="high"
           sizes="100vw"
-          className="object-cover object-[50%_48%] brightness-[0.92] saturate-[1.06]"
+          className="object-cover object-[42%_center] brightness-[1.08] saturate-[1.08]"
         />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(28,23,20,0.86),rgba(28,23,20,0.56)_48%,rgba(28,23,20,0.24)),linear-gradient(180deg,rgba(28,23,20,0.12),rgba(28,23,20,0.74))]" />
         <Container className="relative flex min-h-[76svh] items-end pb-10 pt-28 sm:pb-14">
